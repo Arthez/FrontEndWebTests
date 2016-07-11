@@ -1,0 +1,71 @@
+//imports
+@import "colors";
+
+//variables
+@backgroundColor: #AAFFAA;
+@navBackgroundColor: gray;
+
+@defaultFontSize: 32px;
+
+//custom functions - making custom function with default value
+.rounded(@radius: 5px) {
+  border-radius: @radius;
+}
+
+.purpleText {
+  color: purple;
+}
+
+.specialDiv {
+  background: @backgroundColor;
+  .rounded();
+
+  //nesting - declaring element in another element
+  span {
+    font-family: "Open Sans", serif;
+  }
+}
+
+p {
+  background: darken(@backgroundColor, 30%);
+
+  //mixin - copy attributes from other class
+  .purpleText
+}
+
+
+
+#navigation {
+  margin: 20px;
+  background: @navBackgroundColor;
+
+  a:hover {
+
+    //color operation
+    background: lighten(@navBackgroundColor, 30%);
+    font-weight: bold;
+  }
+}
+
+#welcome_banner {
+  font-size: @defaultFontSize;
+  background: lightblue;
+
+  @media screen {
+    @media (max-width: 800px) {
+      background: @colorCoral;
+
+      //operations - changing variable value with math operators
+      font-size: @defaultFontSize / 2;
+    }
+  }
+}
+
+//paths
+@pics: "pics/";
+
+#pic {
+  width: 400px;
+  height: 400px;
+  background: url("@{pics}kolby-dla-papugi.jpg");
+}

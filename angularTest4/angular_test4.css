@@ -1,0 +1,10 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none;
+}
+
+.thick {
+    font-weight: bold;
+    background: darkgray;
+    /*display:inline-block;*/
+    /*list-style-type: circle;*/
+}

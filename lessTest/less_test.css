@@ -1,0 +1,37 @@
+.purpleText {
+  color: purple;
+}
+.specialDiv {
+  background: #AAFFAA;
+  border-radius: 5px;
+}
+.specialDiv span {
+  font-family: "Open Sans", serif;
+}
+p {
+  background: #11ff11;
+  color: purple;
+}
+#navigation {
+  margin: 20px;
+  background: gray;
+}
+#navigation a:hover {
+  background: #cdcdcd;
+  font-weight: bold;
+}
+#welcome_banner {
+  font-size: 32px;
+  background: lightblue;
+}
+@media screen and (max-width: 800px) {
+  #welcome_banner {
+    background: lightcoral;
+    font-size: 16px;
+  }
+}
+#pic {
+  width: 400px;
+  height: 400px;
+  background: url("pics/kolby-dla-papugi.jpg");
+}

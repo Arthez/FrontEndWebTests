@@ -1,0 +1,40 @@
+header {
+    padding: 10px;
+    background: cornflowerblue;
+}
+
+nav ul li {
+    color: white;
+}
+
+
+.col {
+    background: orange;
+    padding: 10px;
+    margin: 5px;
+    float: left;
+    width: 21%;
+    border-radius: 8px;
+}
+
+.specialCol {
+    background: red;
+    padding: 10px;
+    margin: 5px;
+    float: left;
+    width: 20%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.row:after {
+    clear: both;
+    content: " ";
+    display: table;
+}
+
+footer {
+    margin-top: 22px;
+    font-style: italic;
+    font-family: Arial, monospace;
+}

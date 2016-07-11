@@ -1,0 +1,29 @@
+body {
+    margin-left: 50px;
+}
+
+header {
+    color: grey;
+    font-family: "Open Sans", serif;
+}
+
+.customTitle {
+    font-size: x-large;
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.buttonPanel {
+    background: darkgrey;
+    margin: 1%;
+    align-content: center;
+    padding: 20px;
+    display: inline-block;
+    /*align-self: center;*/
+}
+
+.paragraphPanel p {
+    font-size: larger;
+    display: inline-block;
+}

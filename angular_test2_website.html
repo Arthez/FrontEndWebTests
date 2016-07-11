@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Test2</title>
+	<link rel="stylesheet" href="angularTest2/angular_test2.css"/>
+</head>
+<body>
+
+<div class="container" ng-app="app" ng-cloak>
+
+	<div ng-controller="listCtrl">
+
+		<h2>Grocery List:</h2>
+		<table>
+			<thead>
+			<tr>
+				<th>Item</th>
+				<th>Purchased</th>
+			</tr>
+			</thead>
+			<tr ng-repeat="item in itemList">
+				<td>{{item.item}}</td>
+				<td><input type="checkbox" ng-model="item.purchased"></td>
+			</tr>
+		</table>
+
+		<p>
+			<label>New item:
+				<input type="text" ng-model="newItem">
+			</label>
+			<button ng-click="addItem(newItem)">Add Item to List</button>
+		</p>
+
+		<h4>{{missingNewItemError}}</h4>
+
+
+	</div>
+
+	<br>
+	<hr>
+	<br><br>
+
+	<div ng-controller="userCtrl">
+
+		<form name="userForm" ng-submit="saveUser(userInfo)">
+
+
+			<label>Your name: </label>
+			<input type="text" name="inName"
+				   ng-model="userInfo.inName"
+				   ng-required="true"
+				   ng-minlength="3">
+			<span class="errorMessage"
+				  ng-show="userForm.inName.$dirty && userForm.inName.$error.required">
+				Must enter a name!</span>
+
+			<span class="errorMessage"
+				  ng-show="userForm.inName.$dirty && userForm.inName.$error.minlength">
+				Must be over 3 characters!</span>
+
+			<br><br>
+
+			<label>Your street: </label>
+			<input type="text" name="inStreet"
+				   ng-model="userInfo.inStreet"
+				   ng-required="true"
+				   ng-minlength="6">
+
+			<span class="errorMessage"
+				  ng-show="userForm.inStreet.$dirty && userForm.inStreet.$error.minlength">
+				Must be over 6 characters!</span>
+
+			<br><br>
+
+			<label ng-mouseover="">Agree on terms:</label>
+			<input type="checkbox" name="agreed"
+				   ng-model="userInfo.agreed"
+				   ng-true-value="'Agreed'"
+				   ng-false-value="'Did not agreed'"
+				   ng-required="true"/>
+
+
+			<p>
+				<input type="submit" value="Save"
+					   ng-disabled="userForm.$invalid"/>
+			</p>
+
+			<br><br>
+
+			<ol>
+				<li ng-repeat="record in user">{{record.inName}} lives on the {{record.inStreet}} and agreed on terms ({{record.agreed}})</li>
+			</ol>
+
+		</form>
+
+
+	</div>
+
+	<br>
+	<hr>
+	<br><br>
+
+	<div ng-controller="heroCtrl">
+
+	<label>Search for Hero:</label>
+		<input type="text" ng-model="heroName" ng-keypress="onKeyPress($event)">
+		<button ng-click="getHeroData()">SEARCH</button>
+
+
+	</div>
+
+	<br>
+
+	<div ng-controller="heroCtrl">
+
+		<label>Hero name:</label>
+		<input type="text" ng-model="heroName"><br>
+		<label>Real name:</label>
+		<input type="text" ng-model="realName">
+		<br>
+		<button ng-click="addHeroData(realName, heroName)">ADD</button>
+
+		<br>
+		<p>
+		{{heroData}}
+		</p>
+
+	</div>
+
+</div>
+
+<script src="LIBRARIES/angular.js"></script>
+<script src="LIBRARIES/jquery-3.0.0.js"></script>
+<script src="angularTest2/app.js"></script>
+</body>
+</html>

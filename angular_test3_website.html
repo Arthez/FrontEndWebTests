@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular test3</title>
+	<link rel="stylesheet" href="angularTest3/angular_test3.css"/>
+</head>
+<body ng-app="app" ng-cloak="true">
+
+<div ng-controller="mainCtrl as parent">
+
+	<p>Name: {{parent.name}}</p>
+	<p>Sound: {{parent.sound}}</p>
+	<button ng-click="parent.animalClick()">DATA</button>
+
+</div>
+
+<div ng-controller="dogCtrl as dog">
+
+	<p>Name: {{dog.child.name}}</p>
+	<p>Sound: {{dog.child.sound}}</p>
+	<button ng-click="dog.child.animalClick()">DATA</button>
+	<button ng-click="dog.child.getDogData()">dogDATA</button>
+
+</div>
+
+<br>
+<hr>
+<br>
+
+<div ng-controller="filterCtrl">
+
+	<label>Case filter:</label>
+	<input type="text" ng-model="name">
+	<p>Upper: {{name | uppercase}}</p>
+	<p>Lower: {{name | lowercase}}</p>
+
+	<br>
+
+	<label>Currency filter:</label>
+	<input type="text" ng-model="money">
+	<p>Currency: {{money | currency}}</p>
+
+	<br>
+	<hr>
+	<br>
+
+	<ul>
+		<li ng-repeat="student in student.gpas | filter: studentName | orderBy: '-gpa'">
+			Name: {{student.name}} - GPA: {{student.gpa}}
+		</li>
+	</ul>
+
+	<br>
+
+	<label>Number Filter : </label>
+	<input type="text" ng-model="numVal">
+	<p>Default : {{numVal | number}}</p>
+	<p>No Fractions : {{numVal | number:0}}</p>
+	<p>Negative 4 Decimals : {{-numVal | number:4}}</p>
+
+	<br>
+
+	<p>Date 1 : {{currDate | date:'medium'}}</p>
+	<p>Date 2 : {{currDate | date:"MM/dd/yyyy 'at' h:mma"}}</p>
+
+	<br>
+
+	<p>Default: {{randomStr}}</p>
+	<p>Max 10 chars: {{randomStr | limitTo: 10}}</p>
+	<p>
+	<ul>
+		<li ng-repeat="item in randArray | limitTo:3">
+			{{item}}
+		</li>
+	</ul>
+
+	<br>
+
+	<p>
+	<ul>
+		<li ng-repeat="item in weather">
+			{{item.day + " : "}} {{item.rain | raining}}
+		</li>
+	</ul>
+	</p>
+
+
+</div>
+
+<script src="LIBRARIES/angular.js"></script>
+<script src="LIBRARIES/jquery-3.0.0.js"></script>
+<script src="angularTest3/app.js"></script>
+<script src="angularTest3/filters.js"></script>
+</body>
+</html>

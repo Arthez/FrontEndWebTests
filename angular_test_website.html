@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS Test</title>
+	<link rel="stylesheet" href="angularTest1/angular_test.css"/>
+</head>
+<body>
+
+<div class="container" ng-app="app" ng-cloak>
+	<!--<header ng-include="'angularTest1/template_nav.html'"></header>-->
+	<!--<footer ng-include="'angularTest1/template_footer.html'"></footer>-->
+
+	<div ng-controller="ctrl">
+
+
+		<input type="number" ng-model="number1" ng-change="calculateNumbers()"/>
+		<input type="number" ng-model="number2" ng-change="calculateNumbers()"/><br>
+		<button ng-click="calculateNumbers()">Calculate</button>
+		<p ng-mouseover="changeResultColor()" id="result_text">Result: {{result}}</p>
+
+		<p>Number1 is: {{number1}}</p>
+		<p>Number2 is: <span data-ng-bind="number2"></span></p><br>
+
+		<p style="font-weight: bold">{{people[0].name + " is " + people[0].age + " years old"}}</p>
+		<p ng-repeat="person in people">[{{$index+1}}] {{person.name}} is {{person.age}} years old</p>
+
+		<textarea>At w3schools.com you will learn how to make a website. We offer free tutorials in all web development technologies.
+		</textarea><br>
+
+
+	</div><hr>
+
+	<div ng-controller="listCtrl">
+
+
+		<h3>Items in cart: {{shopList.length}}</h3>
+		<ol style="font-weight: bold">
+			<li>{{shopList[0].item}}</li>
+		</ol>
+		<ol start="2">
+			<li ng-repeat="item in shopList" ng-if="$index > 0">{{item.item}}</li>
+		</ol>
+
+		<label>Change 1st item:</label>
+		<input type="text" ng-model="shopList[0].item"><br>
+
+		<h3>List type:</h3>
+		<label>
+			<input type="checkbox" ng-model="showOrder">
+			Order List
+		</label>
+
+		<div ng-include="getProperList()"></div><br><hr><br>
+
+		<div>
+			<label>Pick a number from 1 to 4:
+				<input type="number" ng-model="pickedNumber">
+			</label>
+			<div ng-switch="pickedNumber">
+				<h1 ng-switch-when="1">number A</h1>
+				<h2 ng-switch-when="2">number B</h2>
+				<h3 ng-switch-when="3">number C</h3>
+				<h4 ng-switch-when="4">number D</h4>
+				<h5 ng-switch-default="1">Pick a number from 1 to 4</h5>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--<div ng-app="app2">-->
+<!---->
+<!--</div>-->
+
+
+<script src="LIBRARIES/angular.js"></script>
+<script src="LIBRARIES/jquery-3.0.0.js"></script>
+<script src="angularTest1/app.js"></script>
+<!--<script src="angularTest1/app2.js"></script>-->
+</body>
+</html>

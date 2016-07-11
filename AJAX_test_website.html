@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX test</title>
+	<link rel="stylesheet" href="ajaxTest/ajax_test.css">
+</head>
+<body>
+<main>
+
+	<header><h1>AJAX Test</h1></header>
+	<div id="inputArea">
+		Name: <input id="nameInput" title="Character name">
+	</div>
+	<div class="mainText" id="mainText">No data yet</div>
+
+	<template id="character_template">
+		<ul>
+			<li><strong>Name: </strong> {{name}}</li>
+			<li><strong>Realm: </strong> {{realm}}</li>
+			<li><strong>Achiv points: </strong>{{achievementPoints}}</li>
+		</ul>
+	</template>
+
+
+</main>
+
+
+<script src="LIBRARIES/jquery-3.0.0.js"></script>
+<script type="text/javascript" src="LIBRARIES/mustache.js"></script>
+<!--<script src="ajaxTest/ajax_test.js"></script>-->
+<!--<script src="ajaxTest/ajax_test_modular.js"></script>-->
+<script src="ajaxTest/ajax_test_modular_scope.js"></script>
+
+</body>
+</html>

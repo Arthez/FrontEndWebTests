@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Check Array</title>
+	<link rel="stylesheet" href="../node_modules/angular-material/angular-material.css"/>
+</head>
+<body ng-app="sortingApp">
+
+<div ng-controller="sortingCtrl">
+	<ol>
+		<li ng-repeat="value1 in allValues1 track by $index ">...{{value1}}</li>
+		<span>Sorted:{{sorted1}}</span>
+	</ol>
+	<br>
+	<ol>
+		<li ng-repeat="value2 in allValues2 track by $index">...{{value2}}</li>
+		<span>Sorted:{{sorted2}}</span>
+	</ol>
+	<br>
+	<ol>
+		<li ng-repeat="value3 in allValues3 track by $index">...{{value3}}</li>
+		<span>Sorted:{{sorted3}}</span>
+	</ol>
+	<ol>
+		<li ng-repeat="value4 in allValues4 track by $index ">...{{value4}}</li>
+		<span>Sorted:{{sorted4}}</span>
+	</ol>
+	<br>
+	<ol>
+		<li ng-repeat="value5 in allValues5 track by $index">...{{value5}}</li>
+		<span>Sorted:{{sorted5}}</span>
+	</ol>
+	<br>
+
+	<hr>
+
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<span>My App's Title</span>
+			<!-- fill up the space between left and right area -->
+			<span flex></span>
+			<md-button>
+				Right Bar Button
+			</md-button>
+		</div>
+	</md-toolbar>
+	<md-content>
+		Hello!
+	</md-content>
+
+	<md-switch ng-model="isActive" aria-label="Finished?" ng-change="onSwitchChange()">
+		Finished ?
+	</md-switch>
+	<md-switch md-no-ink ng-model="hasInk" aria-label="No Ink Effects">
+		No Ink Effects
+	</md-switch>
+	<md-switch ng-disabled="true" ng-model="isDisabled" aria-label="Disabled">
+		Disabled
+	</md-switch>
+
+</div>
+
+<script src="../LIBRARIES/angular.js"></script>
+<script src="../LIBRARIES/jquery-3.0.0.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.js"></script>
+<script src="../node_modules/angular-material/angular-material.js"></script>
+<script src="check_array.js"></script>
+</body>
+</html>

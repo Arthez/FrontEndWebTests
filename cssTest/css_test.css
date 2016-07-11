@@ -1,0 +1,17 @@
+body {
+    background: orange;
+    font-family: "Open Sans", serif;
+}
+
+h1, h2 {
+    color: grey;
+}
+
+li {
+    padding: 15px 0;
+}
+
+.my_style_class {
+    font-size: large;
+    color: cornflowerblue;
+}

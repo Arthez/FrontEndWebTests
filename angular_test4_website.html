@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Test4</title>
+	<link rel="stylesheet" href="angularTest4/angular_test4.css"/>
+</head>
+<body ng-app="app" ng-cloak="true">
+
+<div ng-controller="mainCtrl">
+
+	<ul jql-directive>
+		<li id="barry">Barry Bonds</li>
+		<ul>
+			<li>AVG : .298
+			<li>HR : 762
+			<li>OBP : .444
+		</ul>
+		<li id="hank">Hank Aaron</li>
+		<ul>
+			<li>AVG : .305
+			<li>HR : 755
+			<li>OBP : .374
+		</ul>
+		<li>Babe Ruth</li>
+		<ul>
+			<li>AVG : .342
+			<li>HR : 714
+			<li>OBP : .474
+		</ul>
+	</ul>
+
+	<br>
+
+	<h4>Children in List</h4>
+	<span id="childrenList"></span><br><br>
+	Barry's Number: <span id="barrysNum"></span><br><br>
+	Is Hank Bold: <span id="hankBold"></span><br><br>
+	Barry's ID: <span id="barryID"></span><br><br>
+	<button ng-click="unBold()">Toggle Bold</button>
+
+	<przerwa></przerwa>
+
+	<div bb-player-list="bbPlayers" array-item="name | uppercase"></div>
+
+	<przerwa></przerwa>
+
+	<player name="barryBonds"></player>
+
+	<przerwa></przerwa>
+
+	<div ex-dir>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vestibulum neque nec purus rutrum,
+		at dignissim lectus egestas. Aliquam pretium tortor ligula, non egestas massa dictum quis. Aenean
+		iaculis elit tempor odio tristique malesuada. Vivamus in nisl vulputate, scelerisque mi vitae, efficitur metus.
+	</div>
+
+</div>
+
+<script src="LIBRARIES/angular.js"></script>
+<script src="LIBRARIES/jquery-3.0.0.js"></script>
+<script src="angularTest4/app.js"></script>
+</body>
+</html>

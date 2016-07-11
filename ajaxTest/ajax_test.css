@@ -1,0 +1,18 @@
+.mainText {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.errorText {
+    color: red;
+    font-style: italic;
+}
+
+body {
+    margin-left: 2%;
+}
+
+ul
+{
+    list-style-type: none;
+}
